@@ -34,3 +34,8 @@ VueJS proxies the properties of the "data" object as well as the functions of th
 # Disabling Re-Rendering with "v-once"
 Sometimes you may need to render the value of a VueJS data in an HTML element only once, that is, you don't want the element to be updated when the data changes. You can do this by using the "v-once" directive. Example:
     <h1 v-once>{{ title }}</h1>  --> The element value won't be updated when "title" is changed
+
+# Outputting raw HTML with "v-html"
+VueJS doesn't render HTML content by default. Thus to render it inside an element you should use the "v-html" directive passing as its value the name of the VueJS data that contains the HTML. Example:
+    <p v-html="linkHtml"></p>
+    

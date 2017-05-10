@@ -7,9 +7,14 @@
     <body>
         <div id="app">
             <h1 v-once>{{ title }}</h1>
-            <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+            <p>{{ sayHello() }} - <a v-bind:href="link" target="blank">Google</a></p>
             <p>{{ changeableText }}</p>
-            <input type="text" v-on:input="changeTitle">            
+            <input type="text" v-on:input="changeTitle">
+            <br>
+            <br>
+            <br>
+            <hr>
+            <p v-html="repoLinkHtml"></p>
         </div>
     </body>
 </html>
