@@ -1,0 +1,21 @@
+# How VueJS works
+View.js creates a template based on the HTML code, stores that internally and then uses this template to create the real HTML code, which at the end is rendered as the DOM.
+In other words, a VueJS instance is like a "layer" between the code itself and the HTML being rendered in the browser. This "layer" do the following steps:
+  1) Takes the HTML code
+  2) Creates a template for it
+  3) Renders this template (converting things like String Interpolation to real texts)
+  4) Outputs the final HTML code
+
+# How the VueJS Template Syntax and Instance work together
+All properties inside "data" and all functions inside "methods" can be directly accessed in the template as "root" properties and functions.
+
+# Accessing Data in the Vue Instance
+VueJS proxies the properties of the "data" object as well as the functions of the "methods" so that they can be accessed inside the VueJS instance through "this". Example:
+    new Vue({
+            data: { title: 'Any title' },
+            methods: {
+                anyFunction: function() {
+                    return this.title; // Note the "this" being used to access the property
+                }
+            }
+        });
