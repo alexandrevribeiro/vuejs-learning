@@ -1,5 +1,5 @@
 # How VueJS works
-View.js creates a template based on the HTML code, stores that internally and then uses this template to create the real HTML code, which at the end is rendered as the DOM.
+VueJS creates a template based on the HTML code, stores that internally and then uses this template to create the real HTML code, which at the end is rendered as the DOM.
 In other words, a VueJS instance is like a "layer" between the code itself and the HTML being rendered in the browser. This "layer" do the following steps:
   1) Takes the HTML code
   2) Creates a template for it
@@ -19,3 +19,10 @@ VueJS proxies the properties of the "data" object as well as the functions of th
                 }
             }
         });
+
+# Binding attributes
+- In order to we to be able to use VueJS data (properties and methods) inside an HTML attribute we should bind it dynamically through the "v-bind" directive VueJS ships with. 
+- The name of the attribute we want to bind should be passed as an argument to the "v-bind" directive by adding a colon and passing the attribute name. 
+- Remember that inside the attribute it's already VueJS template, so we don't use curly braces.
+- Example:
+    <a v-bind:href="link">Google</a>

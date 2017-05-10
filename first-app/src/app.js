@@ -3,7 +3,8 @@ window.onload = function () {
     new Vue({
         el: '#app',
         data: {
-            title: 'Type something below...'
+            title: 'Type something below...',
+            link: 'http://www.google.com'
         },
         methods: {
             changeTitle: function(event) {
