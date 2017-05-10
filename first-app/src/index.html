@@ -6,8 +6,9 @@
     </head>
     <body>
         <div id="app">
+            <h1 v-once>{{ title }}</h1>
             <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
-            <p>{{ title }}</p>
+            <p>{{ changeableText }}</p>
             <input type="text" v-on:input="changeTitle">            
         </div>
     </body>

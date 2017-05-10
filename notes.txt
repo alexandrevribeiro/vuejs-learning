@@ -26,3 +26,11 @@ VueJS proxies the properties of the "data" object as well as the functions of th
 - Remember that inside the attribute it's already VueJS template, so we don't use curly braces.
 - Example:
     <a v-bind:href="link">Google</a>
+
+# Understanding and Using Directives
+- A directive is basically an instruction you place in you code. 
+- VueJS ships with just a few built-in directives, since VueJS itself already covers most use-cases you might want to cover.
+
+# Disabling Re-Rendering with "v-once"
+Sometimes you may need to render the value of a VueJS data in an HTML element only once, that is, you don't want the element to be updated when the data changes. You can do this by using the "v-once" directive. Example:
+    <h1 v-once>{{ title }}</h1>  --> The element value won't be updated when "title" is changed

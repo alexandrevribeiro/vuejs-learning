@@ -3,16 +3,18 @@ window.onload = function () {
     new Vue({
         el: '#app',
         data: {
-            title: 'Type something below...',
+            title: 'Hello World!',
+            changeableText: "Type something below...",
             link: 'http://www.google.com'
         },
         methods: {
             changeTitle: function(event) {
                 // Vue makes all data properties available through "this"
-                this.title = event.target.value;
+                this.changeableText = event.target.value;
             },
             sayHello: function() {
-                return 'Hello!'
+                this.title = "Hello!";
+                return this.title;
             }
         }
     });
