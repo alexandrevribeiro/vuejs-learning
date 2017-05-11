@@ -42,3 +42,9 @@ VueJS doesn't render HTML content by default. Thus to render it inside an elemen
 # Listening events
 To listen to a DOM event we need to use the "v-on" directive, which in turn expects the event name as argument. The function to be called should be passed as the value of the directive. Example:
     <button v-on="doSomething">Click me</button>
+
+# Getting Event data from the Event object
+The event object created by the DOM can be easily accessed by the callback function by just expecting it as an argument. Example:
+    methods: {
+        updateCoordinates: function(event) { this.x = event.clientX; }
+    }
