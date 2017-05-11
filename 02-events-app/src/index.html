@@ -12,6 +12,26 @@
                 <!-- The "stop" modifier below prevents further propagation of the event -->
                 Coordinates {{ x }} / {{ y }} - <span v-on:mousemove.stop>[DEAD SPOT]</span>
             </p>
+            <br><br>
+            <hr>
+            <div>
+                <p>
+                    Instructions:
+                    <ul>
+                        <li>Press "Enter" or "Tab" to update the data</li>
+                        <li>Press "Alt + C" or "Ctrl + Click" to clear the data</li>
+                        <li @click.ctrl="clearInput">"Ctrl + Click" here to clear the data</li>
+                    </ul>
+                </p>
+                <p>
+                    <!-- "v-on:keyup" is equal to "@keyup" -->
+                    <input type="text" v-model="inputValue" placeholder="Edit me"
+                        @keyup.enter.down="showInputValue = true"
+                        @keyup.alt.67="clearInput">
+
+                    <span v-show="showInputValue" >- [{{ inputValue }}]</span>
+                 </p>
+            </div>
         </div>
     </body>
 </html>

@@ -5,7 +5,9 @@ window.onload = function () {
         data: {
             counter: 0,
             x: 0,
-            y: 0
+            y: 0,
+            showInputValue: false,
+            inputValue: '',
         },
         methods: {
             increase: function(step, event) {
@@ -14,6 +16,10 @@ window.onload = function () {
             updateCoordinates: function(event) {
                 this.x = event.clientX;
                 this.y = event.clientY;
+            },
+            clearInput: function(event) {
+                this.inputValue = '';
+                this.showInputValue = false;
             }
         }
     });

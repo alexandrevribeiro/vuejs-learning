@@ -57,9 +57,16 @@ The event object created by the DOM can be easily accessed by the callback funct
 
 # Event Modifiers
 - Event modifiers allow us to modify the behavior of an event. It could be done by adding a "." and the modifier name after the event name.
-- Possible event modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers
+- Available event modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers
 - Example:
     <p v-on:mousemove="updateCoordinates">
         <!-- The "stop" modifier below prevents further propagation of the event -->
         Coordinates {{ x }} / {{ y }} - <span v-on:mousemove.stop="">[DEAD SPOT]</span>
     </p>
+
+# Keyboard event modifiers
+- When listening for keyboard events, we often need to check for common key codes. Vue also allows adding key modifiers for v-on when listening for key events.
+- Available key modifiers: https://vuejs.org/v2/guide/events.html#Key-Modifiers
+- Example:
+    <!-- only call vm.submit() when the key is enter -->
+    <input v-on:keyup.enter="submit">
