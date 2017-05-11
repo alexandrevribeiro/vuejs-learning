@@ -54,3 +54,12 @@ The event object created by the DOM can be easily accessed by the callback funct
 - And you can also pass the "event object" created by the DOM through the "$event" protected variable.
 - Example:
     <button v-on:click="increase(2, $event)">Click me</button>
+
+# Event Modifiers
+- Event modifiers allow us to modify the behavior of an event. It could be done by adding a "." and the modifier name after the event name.
+- Possible event modifiers: https://vuejs.org/v2/guide/events.html#Event-Modifiers
+- Example:
+    <p v-on:mousemove="updateCoordinates">
+        <!-- The "stop" modifier below prevents further propagation of the event -->
+        Coordinates {{ x }} / {{ y }} - <span v-on:mousemove.stop="">[DEAD SPOT]</span>
+    </p>
