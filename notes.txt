@@ -48,3 +48,9 @@ The event object created by the DOM can be easily accessed by the callback funct
     methods: {
         updateCoordinates: function(event) { this.x = event.clientX; }
     }
+
+# Passing your own Arguments to the Event functions
+- You can pass your own arguments to the event function by just specifying them as arguments of the function in the Vue template. 
+- And you can also pass the "event object" created by the DOM through the "$event" protected variable.
+- Example:
+    <button v-on:click="increase(2, $event)">Click me</button>
