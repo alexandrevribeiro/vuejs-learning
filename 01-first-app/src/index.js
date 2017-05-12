@@ -1,7 +1,13 @@
-var runApp = require('../../lib/generic-app');
+var runner = require('express-app-runner');
 var path = require('path');
 
-var indexPath = path.join(__dirname, 'index.html');
-var publicPath = __dirname;
+var indexFilePath = path.join(__dirname, 'index.html');
 
-runApp(indexPath, publicPath);
+// Defines a index page to be provided by '/'
+runner.setIndexFile(indexFilePath);
+
+// Making the content of 'public' folder available for the app
+runner.setStaticDir(__dirname);
+
+// Runs the app
+runner.run();
