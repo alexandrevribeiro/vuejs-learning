@@ -1,7 +1,3 @@
-var runApp = require('../../lib/generic-app');
-var path = require('path');
+var simpleApp = require('../../lib/simple-app');
 
-var indexPath = path.join(__dirname, 'index.html');
-var publicPath = __dirname;
-
-runApp(indexPath, publicPath);
+simpleApp(__dirname);
