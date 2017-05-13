@@ -70,3 +70,6 @@ The event object created by the DOM can be easily accessed by the callback funct
 - Example:
     <!-- only call vm.submit() when the key is enter -->
     <input v-on:keyup.enter="submit">
+
+# Writing JavaScript Code in the Templates
+All the places in the template you can access the Vue instance, you can write any valid JavaScript code, as long as only one expression, and it doesn't contains an "if", a for loop, or something like that.

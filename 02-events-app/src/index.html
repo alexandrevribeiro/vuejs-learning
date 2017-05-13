@@ -1,13 +1,15 @@
 <!DOCTYPE>
 <html>
     <head>
-        <script src="https://vuejs.org/js/vue.js"></script>
+        <script src="vue.js"></script>
         <script src="vue-app.js"></script>
     </head>
     <body>
         <div id="app">
-            <button v-on:click="increase(2, $event)">Click me</button>
+            <button v-on:click="increase(2, $event)">Increase 2</button>
+            <button v-on:click="counter++">Increase 1</button>
             <p>{{ counter }}</p>
+            <p>{{ counter > 10 ? 'Greater than 10' : 'Smaller than 10' }}</p>
             <p v-on:mousemove="updateCoordinates">
                 <!-- The "stop" modifier below prevents further propagation of the event -->
                 Coordinates {{ x }} / {{ y }} - <span v-on:mousemove.stop>[DEAD SPOT]</span>
