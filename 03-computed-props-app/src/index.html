@@ -1,0 +1,16 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <script src="vue.js"></script>
+        <script src="vue-app.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button @click="counter++">Increase</button>
+            <button @click="counter--">Decrease</button>
+            <button @click="secondCounter++">Increase second</button>
+            <p>Counter: {{ counter }} | {{ secondCounter }}</p>
+            <p>Result: {{ result() }} | {{ computedResult }}</p>
+        </div>
+    </body>
+</html>
