@@ -1,16 +1,25 @@
 <!DOCTYPE>
 <html>
-    <head>
-        <script src="vue.js"></script>
-        <script src="vue-app.js"></script>
-    </head>
-    <body>
-        <div id="app">
-            <button @click="counter++">Increase</button>
-            <button @click="counter--">Decrease</button>
-            <button @click="secondCounter++">Increase second</button>
-            <p>Counter: {{ counter }} | {{ secondCounter }}</p>
-            <p>Result: {{ result() }} | {{ computedResult }}</p>
-        </div>
-    </body>
+
+<head>
+    <script src="vue.js"></script>
+    <script src="vue-app.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="firstCounter++">Increase first counter (method)</button>
+        <button @click="secondCounter++">Increase second counter (computed)</button>
+        <p>First counter: {{ firstCounter }} | Second counter: {{ secondCounter }}</p>
+        <p>Result first counter (method): {{ firstCounterResult() }} </p>
+        <p>Result second counter (computed): {{ secondCounterResult }} </p>
+        <hr>
+        <p><i>
+            Look at the Console to the the difference between the "Method" and the "Computed prop" being called.<br>
+            Notice that when any of the buttons is clicked the "method" is always called,
+            while the "computed prop" is called only when clicking in the second button.</i>
+        </p>
+    </div>
+</body>
+
 </html>
