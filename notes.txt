@@ -80,6 +80,7 @@ All the places in the template you can access the Vue instance, you can write an
 
 # Computed properties
 - Computed properties are declared as functions (but used as properties in the templates) in the "computed" property of the Vue instance.
+- In other words, in computed, we set up the property and then, as a function, we set up the logic how this property should be computed.
 - Vue analysis the properties used inside computed properties and also caches the result, making the computed property be re-calculated only when there is need, which is when any property being used inside it is changed.
 - Example:
     new Vue({
@@ -91,3 +92,35 @@ All the places in the template you can access the Vue instance, you can write an
                 }
             }
         });
+
+# Watch
+- With "watch" you can execute code when a specific property is changed.
+- You can declare the watched properties in the "watch" property of the Vue instance.
+- However it's better to use "computed properties" whenever you can, since they are more optimized because the cache Vue creates, and so on.
+- You may execute async codes in it
+- Example: 
+    new Vue({
+            data: { counter: 0 },
+            watch: {
+                counter: function() {
+                    // This function will be called only when "counter" is changed
+                    return this.counter > 10 ? '> 10' : '< 10';
+                }
+            }
+        });
+
+# Methods vs Computed vs Watch
+- Methods:
+    - For cases where you need to execute a code when any data property is changed.
+    - It may return a value and be used in the template.
+- Computed properties: 
+    - For cases where you need to execute a code when any property BEING USED inside the function is changed.
+    - It should return a value that's the value of the computed property.
+    - It may be used in the template as a property.
+    - When returning a value (the value of the computed prop), it always needs to run synchronously.
+    - It's the most optimized option since Vue caches the result of it.
+- Watch: 
+    - For cases where you need to execute a code when a specific property is changed.
+    - It isn't available as a function to be used in the template.
+    - It shouldn't return a value since no place calls it.
+    - It may execute asynchronously code.
