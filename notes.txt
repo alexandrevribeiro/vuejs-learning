@@ -124,3 +124,8 @@ All the places in the template you can access the Vue instance, you can write an
     - It isn't available as a function to be used in the template.
     - It shouldn't return a value since no place calls it.
     - It may execute asynchronously code.
+
+# Shorthands
+Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcuts for them:
+    - "v-on:[event]" -> "@:[event]". Example: @click=""
+    - "v-bind:[attr]" -> ":[attr]". Example: :href=""

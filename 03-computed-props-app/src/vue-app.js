@@ -21,14 +21,14 @@ window.onload = function () {
             }
         },
         watch: {
-            firstCounter: function() {
+            firstCounter: function(value) {
                 this.watchedFirstState = 'Watching "firstCounter": func called.';
                 var vueInst = this;
                 setTimeout(function(){
                     vueInst.watchedFirstState = 'Watching "firstCounter": after 2 seconds (setTimeout).';
                 }, 2000);
             },
-            secondCounter: function() {
+            secondCounter: function(value) {
                 this.watchedSecondState = 'Watching "secondCounter": func called.';
                 var vueInst = this;
                 setTimeout(function(){
