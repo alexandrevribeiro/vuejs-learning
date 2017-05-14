@@ -75,8 +75,8 @@ The event object created by the DOM can be easily accessed by the callback funct
 All the places in the template you can access the Vue instance, you can write any valid JavaScript code, as long as only one expression, and it doesn't contains an "if", a for loop, or something like that.
 
 # Two way Binding
-- Two way binding allows us to bind a property in two directions, so that every tine it is update in the Vue instance the change is also reflected in the template and vice-versa.
-- This is made through the "v-bind" attribute.
+- Two way binding allows us to bind a property in two directions, which means that every tine the property is changed in the Vue instance the change is also reflected in the template and vice-versa.
+- This is made through the "v-model" attribute.
 
 # Computed properties
 - Computed properties are declared as functions (but used as properties in the templates) in the "computed" property of the Vue instance.
