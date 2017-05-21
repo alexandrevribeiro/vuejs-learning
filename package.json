@@ -1,0 +1,22 @@
+{
+  "name": "vuejs-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vribeiro-alexandre/vuejs-learning.git"
+  },
+  "author": "Alexandre Ribeiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vribeiro-alexandre/vuejs-learning/issues"
+  },
+  "homepage": "https://github.com/vribeiro-alexandre/vuejs-learning#readme",
+  "dependencies": {
+    "express-app-runner": "^2.0.1"
+  }
+}
