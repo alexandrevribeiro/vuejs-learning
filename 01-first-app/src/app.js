@@ -6,7 +6,7 @@ window.onload = function () {
             title: 'Hello World!',
             changeableText: "Type something below...",
             link: 'http://www.google.com',
-            repoLinkHtml: '<a href="https://github.com/vribeiro-alexandre/vuejs-learning" target="blank">Repository</a>'
+            repoLinkHtml: '<a href="https://github.com/alexandrevribeiro/vuejs-learning" target="blank">Repository</a>'
         },
         methods: {
             changeTitle: function(event) {

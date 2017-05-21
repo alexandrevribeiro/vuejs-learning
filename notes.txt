@@ -129,3 +129,20 @@ All the places in the template you can access the Vue instance, you can write an
 Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcuts for them:
     - "v-on:[event]" -> "@:[event]". Example: @click=""
     - "v-bind:[attr]" -> ":[attr]". Example: :href=""
+
+# Dynamic styles with CSS classes
+- You can conditionally attach a CSS class to an element through the "v-bind:class" or simply ":class".
+- It expects an JavaScript object as argument, where the key is the class name, and the value is the a boolean which defines whether or not the class should be attached. Example:
+    <div :class="{red: attachRed}"></div>
+- Instead of directly using the JS object in the HTML, you could also use a computed property. Example:
+    VueJS:
+        computed: {
+            divClasses: function () {
+                return {
+                    red: this.attachRed,
+                    blue: !this.attachRed
+                };
+            }
+        }
+    HTML:
+        <div @click="attachRed = !attachRed" class="divClasses"></div>
