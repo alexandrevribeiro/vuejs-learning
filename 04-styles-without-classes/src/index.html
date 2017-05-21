@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <script src="vue.js"></script>
+    <script src="vue-app.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div id="app">
+       <div class="demo" :style="{backgroundColor: color}"></div>
+       <div class="demo" :style="myStyle"></div>
+       <hr>
+       <input type="text" v-model="color">
+       <input type="text" v-model="width">
+    </div>
+</body>
+
+</html>

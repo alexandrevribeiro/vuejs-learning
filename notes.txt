@@ -158,3 +158,21 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
     
     3) Binding both class names and JS objects. Example:
         <div class="demo" :class="[color, {red: attachRed}]"></div>
+
+# Dynamic styles without CSS classes
+Besides using classes, you can also directly manipulate the style by using the ":style". Example:
+    VueJS:
+        new Vue({
+            data: { color: 'gray', width: 100 },
+            computed: {
+                myStyle: function () {
+                    return {
+                        backgroundColor: this.color,
+                        width: this.width + 'px'
+                    };
+                }
+            }
+        });
+    HTML:
+        <div class="demo" :style="{backgroundColor: color}"></div>
+        <div class="demo" :style="myStyle"></div>
