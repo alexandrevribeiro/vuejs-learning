@@ -3,7 +3,8 @@ window.onload = function () {
     new Vue({
         el: '#app',
         data: {
-            attachRed: false
+            attachRed: false,
+            color: 'green'
         },
         computed: {
             divClasses: function () {

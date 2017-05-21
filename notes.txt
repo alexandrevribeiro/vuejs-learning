@@ -132,17 +132,29 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
 
 # Dynamic styles with CSS classes
 - You can conditionally attach a CSS class to an element through the "v-bind:class" or simply ":class".
-- It expects an JavaScript object as argument, where the key is the class name, and the value is the a boolean which defines whether or not the class should be attached. Example:
-    <div :class="{red: attachRed}"></div>
-- Instead of directly using the JS object in the HTML, you could also use a computed property. Example:
-    VueJS:
-        computed: {
-            divClasses: function () {
-                return {
-                    red: this.attachRed,
-                    blue: !this.attachRed
-                };
-            }
-        }
-    HTML:
-        <div @click="attachRed = !attachRed" class="divClasses"></div>
+- There are 3 ways you can bind CSS classes:
+    1) Binding a class name. Example:
+        VueJS:
+            data: { color: 'blue'}
+        HTML:
+            <div :class="color"></div>
+            <div :class="[color, anotherName]"></div>
+    
+    2) Binding a JS object:
+        - The argument should be a JavaScript object, where the key is the class name, and the value is a boolean which defines whether or not the class should be attached. Example:
+            <div :class="{red: attachRed}"></div>
+        - And instead of directly using the JS object in the HTML, you could also use a computed property. Example:
+            VueJS:
+                computed: {
+                    divClasses: function () {
+                        return {
+                            red: this.attachRed,
+                            blue: !this.attachRed
+                        };
+                    }
+                }
+            HTML:
+                <div @click="attachRed = !attachRed" :class="divClasses"></div>
+    
+    3) Binding both class names and JS objects. Example:
+        <div class="demo" :class="[color, {red: attachRed}]"></div>
