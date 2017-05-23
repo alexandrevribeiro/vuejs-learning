@@ -3,7 +3,8 @@ new Vue({
   data: {
     effectStarted: false,
     attachHighlight: false,
-    textBoxClass: 'text-box'
+    textBoxClass: 'text-box',
+    inputClass: ''
   },
   methods: {
     startEffect: function () {

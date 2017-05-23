@@ -12,9 +12,10 @@
   <div :class="[textBoxClass, coloredTextBoxClassObj]">I got class :)</div>
 
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
-  <div>
-    <input type="text">
-    <div></div>
+  <div>    
+    <div class="spacedElement" :class="inputClass">Please type a class below. Options: [orange, blue, black]</div>
+    <label>Type a class: </label>
+    <input type="text" v-model="inputClass">
   </div>
   <!-- 4) Let the user enter a class and enter true/ false for another class (create some example classes) and attach the classes -->
   <div>
