@@ -189,3 +189,7 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
 # Using v-show
 - "v-show" directive can be used to show/hide an element
 - It has less performance than "v-if" since it just hides the element
+
+# Using v-for
+- "v-for" directive can be used to iterate through arrays
+- If you want to use the index you can use the following syntax: v-for="(item, index) in items"
