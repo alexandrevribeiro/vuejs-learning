@@ -193,3 +193,4 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
 # Using v-for
 - "v-for" directive can be used to iterate through arrays
 - If you want to use the index you can use the following syntax: v-for="(item, index) in items"
+- When you want to use non-nested elements with v-for you can use a <template> element for this
