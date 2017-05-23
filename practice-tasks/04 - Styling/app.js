@@ -4,7 +4,9 @@ new Vue({
     effectStarted: false,
     attachHighlight: false,
     textBoxClass: 'text-box',
-    inputClass: ''
+    inputClass: '',
+    anotherInputClass: '',
+    attachAnotherClass: false
   },
   methods: {
     startEffect: function () {
@@ -34,6 +36,13 @@ new Vue({
       return {
         'orange-text-box': this.attachHighlight,
         'blue-text-box': !this.attachHighlight
+      };
+    },
+    anotherComputedClassObj: function() {
+      return {
+        orange: this.anotherInputClass == 'orange' && this.attachAnotherClass == 'true',
+        blue: this.anotherInputClass == 'blue' && this.attachAnotherClass == 'true',
+        black: this.anotherInputClass == 'black' && this.attachAnotherClass == 'true'
       };
     }
   }
