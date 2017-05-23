@@ -20,6 +20,12 @@
   margin: 5px 0 5px 0;
 }
 
+.text-font {
+  font-size: large;
+  font-style: italic;
+  font-weight: bold;
+}
+
 .blue-text-box {
   border: 3px solid #0e0bcc;
   background: rgba(28, 16, 128, 0.48);

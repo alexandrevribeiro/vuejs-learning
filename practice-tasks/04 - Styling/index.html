@@ -5,21 +5,21 @@
   <!-- 1) Start the Effect with the Button. The Effect should alternate the "highlight" or "shrink" class on each new setInterval tick (attach respective class to the div with id "effect" below) -->
   <div>
     <button @click="startEffect">Start Effect</button>
-    <div id="effect" :class="effectClass"></div>
+    <div id="effect" :class="effectClasses"></div>
   </div>
 
   <hr class="hr">
 
   <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-  <div :class="[textBoxClass, coloredTextBoxClassObj]">I got class :)</div>
+  <div :class="[textBoxClass, 'text-font', coloredTextBoxClassObj]">I got class :)</div>
 
   <hr class="hr">
 
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>    
-    <div class="spacedElement" :class="inputClass">Please type a class below. Options: [orange, blue, black]</div>
+    <div :class="[{spacedElement: true}, userClass]">Please type one or more classes below. Options: [orange, blue, black, highlight, srink]</div>
     <label>Type a class: </label>
-    <input type="text" v-model="inputClass">
+    <input type="text" v-model="userClass">
   </div>
 
   <hr class="hr">
@@ -28,7 +28,7 @@
   <div>
     <div class="spacedElement" :class="anotherComputedClassObj">Type a class and a boolean below. Classes: [orange, blue, black]</div>
     <p><label>Class: </label> <input type="text" v-model="anotherInputClass"></p>
-    <p><label>Active: </label> <input type="text" v-model="attachAnotherClass"></p>
+    <p><label>Visible: </label> <input type="text" v-model="anotherClassIsVisible"></p>
     
   </div>
 
@@ -36,10 +36,10 @@
 
   <!-- 5) Repeat 3) but now with values for styles (instead of class names). Attach the respective styles.  -->
   <div>    
-    <div class="spacedElement" style="border-style: solid" :style="stylesObj">Please type the styles below</div>
-    <label>Border-color:</label><input type="text" v-model="borderColor">
-    <label>Border-width:</label><input type="text" v-model="borderWidth">
-    <label>Width:</label><input type="text" v-model="width">
+    <div class="spacedElement" style="border-style: solid" :style="myStyle">Please type the styles below</div>
+    <label>Border-color:</label><input type="text" v-model="myStyle.borderColor">
+    <label>Border-width:</label><input type="text" v-model="myStyle.borderWidth">
+    <label>Width:</label><input type="text" v-model="myStyle.width">
   </div>
 
   <hr class="hr">
