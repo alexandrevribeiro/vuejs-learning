@@ -6,7 +6,10 @@ new Vue({
     textBoxClass: 'text-box',
     inputClass: '',
     anotherInputClass: '',
-    attachAnotherClass: false
+    attachAnotherClass: false,
+    borderColor: 'green',
+    borderWidth: 1,
+    width: 200,
   },
   methods: {
     startEffect: function () {
@@ -43,6 +46,13 @@ new Vue({
         orange: this.anotherInputClass == 'orange' && this.attachAnotherClass == 'true',
         blue: this.anotherInputClass == 'blue' && this.attachAnotherClass == 'true',
         black: this.anotherInputClass == 'black' && this.attachAnotherClass == 'true'
+      };
+    },
+    stylesObj: function() {
+      return {
+        'border-width': this.borderWidth + 'px',
+        'border-color': this.borderColor,
+        'width': this.width + 'px'
       };
     }
   }
