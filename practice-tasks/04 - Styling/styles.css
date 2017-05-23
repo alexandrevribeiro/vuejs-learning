@@ -5,11 +5,27 @@
 }
 
 .highlight {
-  background-color: red;
+  background-color: rgb(255, 94, 0);
   width: 200px !important;
 }
 
 .shrink {
-  background-color: gray;
+  background-color: #0e0bcc;
   width: 50px !important;
+}
+
+.text-box {
+  padding: 5px;  
+  width: 157px;
+  margin: 5px 0 5px 0;
+}
+
+.blue-text-box {
+  border: 3px solid #0e0bcc;
+  background: rgba(28, 16, 128, 0.48);
+}
+
+.orange-text-box {
+  border: 3px solid rgb(226, 101, 13);
+  background: rgba(212, 94, 11, 0.48);
 }

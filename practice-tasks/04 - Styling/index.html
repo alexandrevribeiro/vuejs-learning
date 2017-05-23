@@ -7,8 +7,10 @@
     <button @click="startEffect">Start Effect</button>
     <div id="effect" :class="effectClass"></div>
   </div>
+
   <!-- 2) Create a couple of CSS classes and attach them via the array syntax -->
-  <div>I got no class :(</div>
+  <div :class="[textBoxClass, coloredTextBoxClassObj]">I got class :)</div>
+
   <!-- 3) Let the user enter a class (create some example classes) and attach it -->
   <div>
     <input type="text">

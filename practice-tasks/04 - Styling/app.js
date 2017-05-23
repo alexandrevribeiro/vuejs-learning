@@ -3,6 +3,7 @@ new Vue({
   data: {
     effectStarted: false,
     attachHighlight: false,
+    textBoxClass: 'text-box'
   },
   methods: {
     startEffect: function () {
@@ -17,13 +18,21 @@ new Vue({
   },
   computed: {
     effectClass: function () {
-      console.log('effectClass');
       if (!this.effectStarted)
         return;
 
       return {
         highlight: this.attachHighlight,
         shrink: !this.attachHighlight
+      };
+    },
+    coloredTextBoxClassObj: function() {
+      if (!this.effectStarted)
+        return;
+
+      return {
+        'orange-text-box': this.attachHighlight,
+        'blue-text-box': !this.attachHighlight
       };
     }
   }
