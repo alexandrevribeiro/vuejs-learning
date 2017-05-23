@@ -19,6 +19,14 @@
             </p>
         </template>
         <hr>
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(value, key, index) in person">
+                    {{ index }} - {{ key }}: {{ value }}
+                </div>
+                <p></p>
+            </li>
+        </ul>
     </div>
 </body>
 
