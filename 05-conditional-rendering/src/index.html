@@ -11,6 +11,9 @@
         <!-- "v-if" actually remove the element when the value is false instead of just hiding it -->
         <p v-if="show">1 - <span>Hello!</span> You can see me!</p>
         <p v-else>2 - Now you see me!</p>
+        <template v-if="show">
+            <p>Hello! I'm inside a template!</p>
+        </template>
         <button @click="show = !show">Switch</button>
     </div>
 </body>
