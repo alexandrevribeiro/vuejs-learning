@@ -46,3 +46,20 @@
 .black {
   border: 3px solid black;
 }
+
+.hr {
+  margin: 20px 0 20px 0;
+}
+
+.progress-bar {
+  height: 25px;
+  background-color: #198007;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.start-progress-button {
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+}
