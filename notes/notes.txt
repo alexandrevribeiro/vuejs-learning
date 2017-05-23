@@ -178,3 +178,9 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
     HTML:
         <div class="demo" :style="{backgroundColor: color}"></div>
         <div class="demo" :style="myStyle"></div>
+
+# Using v-if
+- "v-if" directive can be used to define whether or not an element will be rendered.
+- Something important to notice is that it doesn't just hide an element, it removes it completely
+- The value of the directive can be any valid in-line JavaScript code
+- It should also be used with "v-else"
