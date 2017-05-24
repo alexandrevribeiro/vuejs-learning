@@ -196,4 +196,12 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
 - When you want to use non-nested elements with v-for you can use a <template> element for this
 - It's also possible to iterate through objects. Example: v-for="value in myObj"
 - The property name and index might be accessed in the following way: v-for="(value, key, index) in myObj"
-- You can also iterate through numbers. Example: 
+- You can also iterate through numbers. Example: v-for="n in 10"
+- Two important behaviors that happens behind the scenes:
+    1. When adding items to an array (with "push" method), VueJS automatically proxies the push method really adding the value to the array (that's not the default JS behavior)
+    2. VueJS updates the list by simply updating the position in the array where something changed. It doesn't track the item itself, only the position. 
+        - So if you want to make VueJS not only aware of the position but also the actual list item, you need to assign a unique key for each list item.
+        - This can be done by using the "v-bind:key" or just ":key". 
+        - It's also a good practice to use the list item as the key when it's not being used more than once in the list
+        - It may be useful, for instance, when reordering the items
+        - Example: <li v-for="(ingredient, i) in ingredients" :key="ingredient"></li>
