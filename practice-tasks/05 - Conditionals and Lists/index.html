@@ -28,13 +28,13 @@
 
   <!-- 4) Print the following object (only the values) and also create a nested loop for the array: {name: 'TESTOBJECT', data: [1.67, 1.33, 0.98, 2.21]} (hint: use v-for and v-if to achieve this) -->
   <ul>
-    <li v-for="value in testData">
-      <span v-if="!Array.isArray(value)">{{ value }}</span>
 
+    <li v-for="value in testData">
+      <template v-if="Array.isArray(value)">
+        <div v-for="innerItem in value">{{ innerItem }}</div>
+      </template>
       <template v-else>
-        <ul>
-          <li v-for="innerItem in value">{{ innerItem }}</li>
-        </ul>
+        {{ value }}
       </template>
     </li>
   </ul>
