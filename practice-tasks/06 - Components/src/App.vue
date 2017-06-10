@@ -14,17 +14,17 @@
 
 <script>
 
-import Header from './shared/Header.vue';
-import Footer from './shared/Footer.vue';
-import Servers from './server/Servers.vue';
-import ServerDetails from './server/ServerDetails.vue';
+import Header from './components/shared/Header.vue';
+import Footer from './components/shared/Footer.vue';
+import Servers from './components/server/Servers.vue';
+import ServerDetails from './components/server/ServerDetails.vue';
 
 export default {
     components: {
-        'app-header': Header,
-        'app-footer': Footer,
-        'app-servers': Servers,
-        'app-server-details': ServerDetails
+        appHeader: Header,
+        appFooter: Footer,
+        appServers: Servers,
+        appServerDetails: ServerDetails
     }
 }
 </script>
