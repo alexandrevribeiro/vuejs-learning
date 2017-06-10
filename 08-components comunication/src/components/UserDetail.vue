@@ -4,6 +4,7 @@
         <p>Many Details</p>
         <p>User name: {{ myName }}</p>
         <p>Reversed name: {{ reverseName() }}</p>
+        <p>User age: {{ userAge }}</p>
         <button @click="resetName">Reset name (child method)</button>
         <button @click="resetCallback">Reset name (parent callback)</button>
     </div>
@@ -31,7 +32,8 @@ export default {
             type: String,
             required: true
         },
-        resetCallback: Function
+        resetCallback: Function,
+        userAge: Number
     }
 
     // 2) Just the name:

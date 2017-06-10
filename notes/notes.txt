@@ -306,3 +306,9 @@ To use callback functions of a parent component in a child component you just ne
         props: {
             resetCallback: Function
         }
+
+# Sharing data between sibling components
+
+Option 1) Emitting a custom event to the parent, which will listening it and send the data again to all children.
+Option 2) Using callback functions like described above
+Option 3) Using an event bus [...]
