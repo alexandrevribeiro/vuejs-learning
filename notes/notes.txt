@@ -232,3 +232,20 @@ Option 3) For small, medium and big projects (files grouped by feature):
         shop/
             main/
             checkout/
+
+# Passing data to child components
+For transferring data from a parent component to a child one we use the "props" in the child component.
+Every property may be passed as an attribute in the parent component. Ex.:
+
+    Child component:
+        <script>
+        export default {
+            props: ['name']
+        }
+        </script>
+
+    Parent component (using v-bind to an existing prop called "name"):
+        <template>
+            <my-component :name="name" />
+        </template>
+
