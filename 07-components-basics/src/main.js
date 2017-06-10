@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
-import Home from './Home.vue';
+import Servers from './Servers.vue';
 
-Vue.component('app-server-status', Home);
+// Registering a component globally
+Vue.component('app-servers', Servers);
 
 new Vue({
   el: '#app',
