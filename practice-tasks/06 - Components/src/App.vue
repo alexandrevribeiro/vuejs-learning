@@ -14,10 +14,10 @@
 
 <script>
 
-import Header from './Header.vue';
-import Footer from './Footer.vue';
-import Servers from './Servers.vue';
-import ServerDetails from './ServerDetails.vue';
+import Header from './shared/Header.vue';
+import Footer from './shared/Footer.vue';
+import Servers from './server/Servers.vue';
+import ServerDetails from './server/ServerDetails.vue';
 
 export default {
     components: {

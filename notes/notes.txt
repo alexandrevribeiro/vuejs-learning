@@ -205,3 +205,30 @@ Instead of using "v-on:[event]" and "v-bind:[attr]" you can also use the shortcu
         - It's also a good practice to use the list item as the key when it's not being used more than once in the list
         - It may be useful, for instance, when reordering the items
         - Example: <li v-for="(ingredient, i) in ingredients" :key="ingredient"></li>
+
+
+# Folder structures
+Option 1) For small projects (all files in the root):
+    src/
+        App.vue
+        Component_1.vue
+        Component_2.vue
+        Component_N.vue
+
+Option 2) For small and medium projects (components in a different folder):
+    src/
+        App.vue
+        components/
+            Component_1.vue
+            Component_2.vue
+            Component_N.vue
+
+Option 3) For small, medium and big projects (files grouped by feature):
+    src/
+        App.vue
+        users/
+            account/
+            analytics/
+        shop/
+            main/
+            checkout/
