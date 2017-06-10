@@ -283,3 +283,15 @@ Possibilities to specify props:
                 }
             }
         },
+
+# Emitting custom event from a child component to the parent
+1) In the child component we can use the "this.$emit" to emit an event to the parent:
+    methods: {
+        resetName() {
+            this.myName = 'Anything';
+            this.$emit('nameWasReset', this.myName);
+        }
+    },
+
+2) In the parent component we can listen to the custom event using "v-on (@)", like any other event:
+    <app-user-detail :myName="name" @nameWasReset="name = $event" />

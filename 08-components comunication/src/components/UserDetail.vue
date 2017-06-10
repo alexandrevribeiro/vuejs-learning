@@ -4,11 +4,30 @@
         <p>Many Details</p>
         <p>User name: {{ myName }}</p>
         <p>Reversed name: {{ reverseName() }}</p>
+        <button @click="resetName">Reset name</button>
     </div>
 </template>
 
 <script>
+
 export default {
+
+    data() {
+        return {
+            originalName: this.myName
+        }
+    },
+    methods: {
+        reverseName() {
+            return this.myName.split('').reverse().join('');
+        },
+        resetName() {
+            this.myName = this.originalName;
+            // Emittes an event to the parent component
+            this.$emit('nameWasReset', this.myName);
+        }
+    },
+
     // Possibilities to specify props:
     // 1) Just the name:
     // props: ['myName'],
@@ -24,7 +43,7 @@ export default {
             type: String,
             required: true
         }
-    },
+    }
 
     // 4) With default values:
     // props: {
@@ -42,13 +61,7 @@ export default {
     //             return { name: 'Me!'};
     //         }
     //     }
-    // },
-
-    methods: {
-        reverseName() {
-            return this.myName.split('').reverse().join('');
-        }
-    }
+    // },    
 }
 </script>
 
