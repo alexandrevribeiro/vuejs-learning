@@ -295,3 +295,14 @@ Possibilities to specify props:
 
 2) In the parent component we can listen to the custom event using "v-on (@)", like any other event:
     <app-user-detail :myName="name" @nameWasReset="name = $event" />
+
+# Components communication with Callback functions
+To use callback functions of a parent component in a child component you just need to expect it as a prop. Ex.:
+
+    - Parent component:
+        <app-user-detail :resetCallback="resetFunc" /> -> "resetFunc" points to a local function
+
+    - Child component:
+        props: {
+            resetCallback: Function
+        }
