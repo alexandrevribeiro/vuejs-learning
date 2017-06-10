@@ -1,17 +1,14 @@
 <template>
     <div class="container">
-        <div class="row">
-            <app-header />
-        </div>
+    
+        <app-header />
         <hr>
         <div class="row">
             <app-servers />
             <app-server-details />
         </div>
         <hr>
-        <div class="row">
-            <footer />
-        </div>
+        <app-footer />
     </div>
 </template>
 
