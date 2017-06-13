@@ -12,7 +12,14 @@
 
 <script>
 
+import { eventBus } from '../main';
+
 export default {
+    created() {
+        eventBus.$on('ageWasEdited', (age) => {
+            this.userAge = age;
+        });
+    },
     methods: {
         reverseName() {
             return this.myName.split('').reverse().join('');
