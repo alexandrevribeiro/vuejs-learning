@@ -17,8 +17,9 @@ export default {
     },
     methods: {
         editAge() {
-            this.userAge = 30;
-            eventBus.$emit('ageWasEdited', this.userAge);
+            this.userAge = 30; // Vue shows an error because of this line: "Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders"
+            // eventBus.$emit('ageWasEdited', this.userAge);
+            eventBus.changeAge(this.userAge);
         }
     }
 }

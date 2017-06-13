@@ -17,7 +17,7 @@ import { eventBus } from '../main';
 export default {
     created() {
         eventBus.$on('ageWasEdited', (age) => {
-            this.userAge = age;
+            this.userAge = age; // Vue shows an error because of this line: "Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders"
         });
     },
     methods: {
