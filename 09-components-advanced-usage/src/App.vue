@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12">
                <app-quote>
-                   <h2>The Quotes</h2>
+                   <h2> {{ quoteTitle }}</h2>
                    <p>A wonderful Quote!</p>
                </app-quote>
             </div>
@@ -18,7 +18,12 @@
     export default {
         components: {
             appQuote: Quote
-        }        
+        },
+        data() {
+            return {
+                quoteTitle: 'The Quotes'
+            };
+        }
     }
 </script>
 
