@@ -11,7 +11,13 @@
             return {
                 counter: 0
             };
-        }    
+        },
+        activated() {
+            console.log('Author component activated!');
+        },
+        deactivated() {
+            console.log('Author component deactivated!');
+        }
     }
 </script>
 
