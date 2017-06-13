@@ -358,3 +358,24 @@ Option 3) Using an event bus, which consists of exporting a new Vue instance and
             <h2 slot="title">Title</h2>
             <p slot="content">Any content here.</p>
         </my-component>
+
+- When there's a non-named slot this is treated by VueJS as the default slot, meaning that every element being passed to the component without a slot name will be rendered in this default slot. Ex.:  
+    - Component:
+        <slot name="title"></slot>
+        <slot></slot>
+
+    - Parent:
+        <my-component>
+            <h2 slot="title">Title</h2>
+            <p>Any content here.</p>
+        </my-component>
+
+- It is also possible to define default content for the slots, by just adding the default content inside the slot tag. In other words, you can specify default content inside a slot, but it will be replaced as soon as you pass content to it in the parent component. Ex.:
+     - Component:
+        <slot name="title">Default title</slot>
+        <slot></slot>
+
+    - Parent:
+        <my-component>
+            <p>Any content here.</p>
+        </my-component>
