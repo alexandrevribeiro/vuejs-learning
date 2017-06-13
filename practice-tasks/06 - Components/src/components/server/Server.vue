@@ -1,31 +1,23 @@
 <template>
-    <li class="list-group-item" >
-        <a href="javascript:void(0)" @click="showDetails">Server #{{ serverData.id }}</a>         
+    <li class="list-group-item" 
+        style="cursor: pointer"
+        @click="serverSelected">
+        Server #{{ server.id }}
     </li>
 </template>
 
 <script>
 
-    import { eventBus } from './../../main.js';
+    import { serverBus } from './../../main.js';
 
     export default {
         props: {
             server: Object
         },
-        data() {
-            return {
-                serverData: this.server
-            };
-        },
         methods: {
-            showDetails() {
-                eventBus.showServerDetails(this.serverData);
+            serverSelected() {
+                serverBus.serverSelected(this.server);
             }
-        },
-        created() {
-            eventBus.$on('serverWasChanged', (server) => {
-                this.serverData = server;
-            });
         }
     }
 </script>

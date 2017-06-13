@@ -235,7 +235,11 @@ Option 3) For small, medium and big projects (files grouped by feature):
 
 # Passing data to child components
 For transferring data from a parent component to a child one we use the "props" in the child component.
-Every property may be passed as an attribute in the parent component. Ex.:
+Every property may be passed as an attribute in the parent component. 
+    - Note: Remember that as Objects are reference types, when they are passed to a child component
+    and they're changed there, their values are also changed in the parent component.
+
+Ex.:
 
     Child component:
         <script>
