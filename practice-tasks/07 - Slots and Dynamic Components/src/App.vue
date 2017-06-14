@@ -3,13 +3,17 @@
         <div class="row">
             <div class="col-xs-12">
                 <br>
-                <button class="btn btn-primary">Load Blue Template</button>
-                <button class="btn btn-success">Load Green Template</button>
-                <button class="btn btn-danger">Load Red Template</button>
+                <button class="btn btn-primary" @click="selectedTemplate = 'app-blue'">Load Blue Template</button>
+                <button class="btn btn-success" @click="selectedTemplate = 'app-green'">Load Green Template</button>
+                <button class="btn btn-danger" @click="selectedTemplate = 'app-red'">Load Red Template</button>
                 <hr>
-                <app-blue></app-blue>
-                <app-green></app-green>
-                <app-red></app-red>
+                <component :is="selectedTemplate">
+                    <h3>Content template!</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Morbi ut scelerisque justo. Nunc aliquam convallis urna non varius.
+                    </p>
+                </component>
             </div>
         </div>
     </div>
@@ -25,6 +29,11 @@
             appBlue: Blue,
             appGreen: Green,
             appRed: Red
+        },
+        data() {
+            return {
+                selectedTemplate: 'app-blue'
+            };
         }
     }
 </script>
