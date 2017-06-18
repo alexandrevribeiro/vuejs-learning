@@ -10,21 +10,24 @@
                         <input
                                 type="text"
                                 id="email"
-                                class="form-control">
+                                class="form-control"    
+                                v-model="user.email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input
                                 type="password"
                                 id="password"
-                                class="form-control">
+                                class="form-control"
+                                v-model="user.password">
                     </div>
                     <div class="form-group">
                         <label for="age">Age</label>
                         <input
                                 type="number"
                                 id="age"
-                                class="form-control">
+                                class="form-control"
+                                v-model="user.age">
                     </div>
 
                 </div>
@@ -101,10 +104,10 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Mail:</p>
-                        <p>Password:</p>
-                        <p>Age:</p>
-                        <p>Message: </p>
+                        <p>Mail: {{ user.email }}</p>
+                        <p>Password: {{ user.password }}</p>
+                        <p>Age: {{ user.age }}</p>
+                        <p>Message: {{ message }}</p>
                         <p><strong>Send Mail?</strong></p>
                         <ul>
                             <li></li>
@@ -121,6 +124,16 @@
 
 <script>
     export default {
+        data() {
+            return {
+                user: {
+                    email: '',
+                    password: '',
+                    age: null
+                },
+                message: ''
+            };
+        }
     }
 </script>
 
