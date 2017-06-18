@@ -399,3 +399,10 @@ Option 3) Using an event bus, which consists of exporting a new Vue instance and
 
     1) When not using "keep-alive": "created" and "destroyed".
     2) When using "keep-alive": "activated" and "deactivated"
+
+# Forms and Two-way model binding
+- The two-way model binding for an input field is made through the "v-model" attribute
+- It's also possible to use the following modifiers:
+    - lazy: By default the two-way model binding occurs in the type event (whenever you type something). The "lazy" modifier changes this behavior performing it in the change, which means whenever the field LOST FOCUS.
+    - trim
+    - number
