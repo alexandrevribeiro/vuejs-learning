@@ -39,7 +39,8 @@
                     <textarea
                             id="message"
                             rows="5"
-                            class="form-control"></textarea>
+                            class="form-control"
+                            v-model="message"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -49,13 +50,15 @@
                             <input
                                     type="checkbox"
                                     id="sendmail"
-                                    value="SendMail"> Send Mail
+                                    value="SendMail"
+                                    v-model="sendMail"> Send Mail
                         </label>
                         <label for="sendInfomail">
                             <input
                                     type="checkbox"
                                     id="sendInfomail"
-                                    value="SendInfoMail"> Send Infomail
+                                    value="SendInfoMail"
+                                    v-model="sendMail"> Send Infomail
                         </label>
                     </div>
 
@@ -107,10 +110,10 @@
                         <p>Mail: {{ user.email }}</p>
                         <p>Password: {{ user.password }}</p>
                         <p>Age: {{ user.age }}</p>
-                        <p>Message: {{ message }}</p>
+                        <p style="white-space: pre">Message: {{ message }}</p>
                         <p><strong>Send Mail?</strong></p>
                         <ul>
-                            <li></li>
+                            <li v-for="item in sendMail"> {{ item }} </li>
                         </ul>
                         <p>Gender:</p>
                         <p>Priority:</p>
@@ -131,7 +134,8 @@
                     password: '',
                     age: null
                 },
-                message: ''
+                message: 'Default text.',
+                sendMail: []
             };
         }
     }
