@@ -12,28 +12,15 @@
 
                     <h1>Signup Form</h1>
                     <hr>
-                    <div class="form-group">                    
-                        <label for="firstName">First name</label>
-                        <input
-                                type="text"
-                                id="firstName"
-                                class="form-control"
-                                v-model="user.firstName">
-                        <br>
-                        <label for="lastName">Last name</label>
-                        <input
-                                type="text"
-                                id="lastName"
-                                class="form-control"
-                                v-model="user.lastName">
-                    </div>
+                    <app-full-name v-model="fullName"></app-full-name>
+
                     <div class="form-group">
                         <label for="email">Mail</label>
                         <input
                                 type="text"
                                 id="email"
                                 class="form-control"    
-                                v-model.trim="user.email">
+                                v-model.trim="email">
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -41,7 +28,7 @@
                                 type="password"
                                 id="password"
                                 class="form-control"
-                                v-model="user.password">
+                                v-model="password">
                     </div>
                     <div class="form-group">
                         <label>Stores data?</label>
@@ -50,14 +37,14 @@
                             <input
                                 type="radio"
                                 id="storesDataYes"
-                                value="true"
+                                value="Yes"
                                 v-model="storesData"> Yes
                         </label>
                         <label for="storesDataNo">
                             <input
                                 type="radio"
                                 id="storesDataNo"
-                                value="false"
+                                value="No"
                                 v-model="storesData"> No
                         </label>
                     </div>                        
@@ -90,9 +77,9 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: {{ user.firstName }} {{ user.lastName }} </p>
-                        <p>Mail: {{ user.email }} </p>
-                        <p>Password: {{ user.password }}</p>
+                        <p>Full Name: {{ fullName }} </p>
+                        <p>Mail: {{ email }} </p>
+                        <p>Password: {{ password }}</p>
                         <p>Store in Database? {{ storesData }} </p>
                     </div>
                 </div>
@@ -102,18 +89,21 @@
 </template>
 
 <script>
+
+    import FullName from './components/FullName.vue';
+
     export default {
         data() {
             return {
-                 user: {
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    password: ''
-                },
-                storesData: false,
+                fullName: '',
+                email: '',
+                password: '',
+                storesData: 'No',
                 isSubmitted: false
             };
+        },
+        components: {
+            appFullName: FullName
         },
         methods: {
             submitted() {
