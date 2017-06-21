@@ -406,3 +406,16 @@ Option 3) Using an event bus, which consists of exporting a new Vue instance and
     - lazy: By default the two-way model binding occurs in the type event (whenever you type something). The "lazy" modifier changes this behavior performing it in the change, which means whenever the field LOST FOCUS.
     - trim
     - number
+
+# What v-model does behind the scenes
+- What "v-model" actually does behind the scenes is bind to the "value" attribute and also listen to the "input" event (that's the default one, but it'll be the "change" event when using the "lazy" modifier).
+- Example of a "manual v-model":
+    <input 
+        type="text"
+        :value="user.email"
+        @input="user.email = $event.target.value">
+
+# Custom form controls
+In order to create your own custom control, you just need a Vue component with must have two key features to work with v-model:
+    - It should have a "value" property (props)
+    - It should emit an "input" event.
