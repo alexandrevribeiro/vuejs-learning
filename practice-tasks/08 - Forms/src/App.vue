@@ -10,6 +10,58 @@
                     <!-- Password -->
                     <!-- Store Data? Yes/No -->
 
+                    <h1>Signup Form</h1>
+                    <hr>
+                    <div class="form-group">                    
+                        <label for="firstName">First name</label>
+                        <input
+                                type="text"
+                                id="firstName"
+                                class="form-control"
+                                v-model="user.firstName">
+                        <br>
+                        <label for="lastName">Last name</label>
+                        <input
+                                type="text"
+                                id="lastName"
+                                class="form-control"
+                                v-model="user.lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Mail</label>
+                        <input
+                                type="text"
+                                id="email"
+                                class="form-control"    
+                                v-model.trim="user.email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input
+                                type="password"
+                                id="password"
+                                class="form-control"
+                                v-model="user.password">
+                    </div>
+                    <div class="form-group">
+                        <label>Stores data?</label>
+
+                        <label for="storesDataYes">
+                            <input
+                                type="radio"
+                                id="storesDataYes"
+                                value="true"
+                                v-model="storesData"> Yes
+                        </label>
+                        <label for="storesDataNo">
+                            <input
+                                type="radio"
+                                id="storesDataNo"
+                                value="false"
+                                v-model="storesData"> No
+                        </label>
+                    </div>                        
+
                     <!-- Exercise 2 -->
                     <!-- Only display the Form if it has NOT been submitted -->
                     <!-- Display the Data Summary ONCE the Form HAS been submitted -->
@@ -28,10 +80,10 @@
                         <h4>Your Data</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Full Name: </p>
-                        <p>Mail: </p>
-                        <p>Password: </p>
-                        <p>Store in Database?: </p>
+                        <p>Full Name: {{ user.firstName }} {{ user.lastName }} </p>
+                        <p>Mail: {{ user.email }} </p>
+                        <p>Password: {{ user.password }}</p>
+                        <p>Store in Database?: {{ storesData ? 'Yes' : 'No' }} </p>
                     </div>
                 </div>
             </div>
@@ -41,6 +93,17 @@
 
 <script>
     export default {
+        data() {
+            return {
+                 user: {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    password: ''
+                },
+                storesData: false
+            };
+        }
     }
 </script>
 
