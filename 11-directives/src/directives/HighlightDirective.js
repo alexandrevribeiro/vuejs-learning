@@ -19,8 +19,8 @@ export default {
             : 0;
 
         if (binding.modifiers['blink']) {
-            let mainColor = binding.value;
-            let secondColor = 'blue';
+            let mainColor =  binding.value.mainColor;
+            let secondColor =  binding.value.secondColor;
             let currentColor = mainColor;
 
             setTimeout(function () {
@@ -30,7 +30,7 @@ export default {
                         : currentColor = secondColor;
                     
                     setElementColor(el, binding, currentColor);
-                }, 1000);
+                }, binding.value.delay);
                 setElementColor(el, binding, binding.value);
             }, delay);
         } else {
