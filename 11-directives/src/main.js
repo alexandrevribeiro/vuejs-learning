@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
+// Global directive
 Vue.directive('highlight', {
   bind(el, binding, vnode) {
     // el.style.backgroundColor = 'green';
@@ -8,7 +9,7 @@ Vue.directive('highlight', {
 
     // "delayed" modifier
     var delay = binding.modifiers['delayed']
-      ? 2000
+      ? 3000
       : 0;
 
     setTimeout(function () {
