@@ -419,3 +419,12 @@ Option 3) Using an event bus, which consists of exporting a new Vue instance and
 In order to create your own custom control, you just need to create a Vue component which must have two key features to work with "v-model":
     - It should have a "value" property (props)
     - It should emit an "input" event.
+
+# Custom directives
+- Directive hooks (life cycle):
+    - bind(el, binding, vnode): It's called as soon as the directive is bound/attached to the element.
+    - inserted(el, binding, vnode): It's called as soon as the directive is inserted to the DOM (the parent node)
+    - update(el, binding, vnode, oldVnode): It's called whenever the component is updated, but before the children components have been updated.
+    - componentUpdate(el, binding, vnode, oldVnode): It's called whenever both the component and the children components are updated.
+    - bind(el, binding, vnode): It's called as soon as the directive is removed to the element.
+
