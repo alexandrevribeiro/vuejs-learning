@@ -5,14 +5,25 @@
                 <h1>Directives Exercise</h1>
                 <!-- Exercise -->
                 <!-- Build a Custom Directive which works like v-on (Listen for Events) -->
-
+                <button v-customOn="clicked" class="btn btn-primary">Click me</button>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-    export default {}
+    import CustomOnDirective from './directives/CustomOnDirective.js';
+
+    export default {
+        directives: {
+            customOn: CustomOnDirective
+        },
+        methods: {
+            clicked() {
+                alert('I was clicked!');
+            }
+        }
+    }
 </script>
 
 <style>
