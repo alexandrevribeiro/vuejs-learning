@@ -431,4 +431,10 @@ In order to create your own custom control, you just need to create a Vue compon
 # Filters
 - Filters are used to transform some output in the template.
 - VueJS doesn't ship with any built-in filter.
+- However, often-times it's better to use "computed props" instead of filters, mainly when it's a complex transformation.
 - Example: 
+    filters: {
+        toUppercase(value) {
+            return value.toUpperCase();
+        }
+    }
