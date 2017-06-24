@@ -428,3 +428,7 @@ In order to create your own custom control, you just need to create a Vue compon
     - componentUpdate(el, binding, vnode, oldVnode): It's called whenever both the component and the children components are updated.
     - bind(el, binding, vnode): It's called as soon as the directive is removed to the element.
 
+# Filters
+- Filters are used to transform some output in the template.
+- VueJS doesn't ship with any built-in filter.
+- Example: 

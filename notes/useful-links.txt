@@ -40,3 +40,8 @@ Helpful Links:
     Official Docs - Slots: http://vuejs.org/guide/components.html#Content-Distribution-with-Slots
     Official Docs - Dynamic Components: http://vuejs.org/guide/components.html#Dynamic-Components
     Official Docs - Misc: http://vuejs.org/guide/components.html#Misc
+
+# Section 12 - Using and Creating directives
+
+Useful Links: 
+    Official Docs - Custom Directives: http://vuejs.org/guide/custom-directive.html

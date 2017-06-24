@@ -30,7 +30,7 @@
                 console.log('Mouse entered!');
             },
             mouseLeave() {
-                console.log('Mouse leaved!');
+                console.log('Mouse left!');
             }
         }
     }
