@@ -7,7 +7,7 @@
                 <button class="btn btn-primary" @click="show = !show">Show </button>
                 <br><br>
                 <transition name="fade">
-                    <div class="alert alert-info" v-show="show">This is some Info</div>
+                    <div class="alert alert-info" v-if="show">This is some Info</div>
                 </transition>
                 <!-- "transition" works with the two possible CSS properties:
                 "animation" and "transition". By default Vue.js the one that has the
@@ -15,6 +15,20 @@
                  -->
                 <transition name="slide" type="animation">
                     <div class="alert alert-info" v-show="show">This is some Info</div>
+                </transition>
+                <!-- "appear" attr makes the transition be also applied when loaded-->
+                <transition name="fade" appear>
+                    <div class="alert alert-info" v-show="show">This is some Info</div>
+                </transition>
+
+                <hr>
+                <button class="btn btn-primary" @click="anotherShow = !anotherShow">Show</button>
+                <br><br>
+                <!--Using different class names-->
+                <transition 
+                    enter-active-class="animated zoomIn"
+                    leave-active-class="animated zoomOut">
+                    <div class="alert alert-info" v-if="anotherShow">This is some Info</div>
                 </transition>
             </div>
         </div>
@@ -25,7 +39,8 @@
     export default {
         data() {
             return {
-                show: false
+                show: true,
+                anotherShow: false
             }
         }
     }
