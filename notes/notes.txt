@@ -442,3 +442,5 @@ In order to create your own custom control, you just need to create a Vue compon
 # Mixins
 - Mixins are a flexible way to distribute reusable functionalities for Vue components. 
 - When a component uses a mixin, all options in the mixin will be “mixed” into the component’s own options.
+- The data mixed is copied for each instance using the mixin, which means it's safe to manipulate the data of a mixing because you're actually changing the Vue instance data instead of a shared data.
+- Global-mixins are mixed with all existing Vue instances in the application. Thus it should be carefully used. The syntax is: Vue.mixin({});.

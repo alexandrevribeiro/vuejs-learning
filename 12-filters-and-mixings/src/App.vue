@@ -7,6 +7,7 @@
                 <p>Upper and Lower filter: "{{ text | toUppercase | to-lowercase }}"</p>
                 <hr>
                 <h4>Code using mixin:</h4>
+                <button @click="fruits.push('Berries')">Add new fruit</button>
                 <input type="text" v-model="fruitFilterText">
                 <ul>
                     <li v-for="fruit in filteredFruits">{{ fruit }}</li>
@@ -37,6 +38,9 @@
         },
         components: {
             appFruits: Fruits
+        },
+        created() {
+            console.log('"Created" hook inside "App".');
         }
     }
 </script>
