@@ -37,6 +37,15 @@
                     leave-active-class="animated zoomOut">
                     <div class="alert alert-info" v-if="anotherShow">This is some Info</div>
                 </transition>
+
+                <hr>
+                <button class="btn btn-primary" @click="showMultiple = !showMultiple">Show</button>
+                <br><br>
+                <!--Transitioning between Multiple Elements-->
+                 <transition name="fade" mode="out-in">
+                    <div class="alert alert-info" v-if="showMultiple" key="info">-> This is some Info</div>
+                    <div class="alert alert-warning" v-else key="warning">-> This is some Warning</div>
+                </transition>
             </div>
         </div>
     </div>
@@ -48,6 +57,7 @@
             return {
                 show: true,
                 anotherShow: false,
+                showMultiple: true,
                 firstAlertAnimation: 'fade'
             }
         }
@@ -80,10 +90,10 @@
     .slide-leave { /* It's not necessary because the @keyFrame */ }
     .slide-leave-active {
         animation: slide-out 1s ease-out forwards;
-        /*transition: opacity 1s;*/
+        transition: opacity 1s;
         /* As below the transition is bigger than the animation, it's necessary
            to tell "<transition>" (through "type") which one should be the last */
-        transition: opacity 3s;
+        /*transition: opacity 3s;*/
         opacity: 0;
     }
 
