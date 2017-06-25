@@ -6,22 +6,28 @@
                 <p>Upper filter: "{{ text | toUppercase }}"</p>
                 <p>Upper and Lower filter: "{{ text | toUppercase | to-lowercase }}"</p>
                 <hr>
+                <h4>Code using mixin:</h4>
                 <input type="text" v-model="fruitFilterText">
                 <ul>
                     <li v-for="fruit in filteredFruits">{{ fruit }}</li>
                 </ul>
+                <hr>
+                <h4>Component using mixin:</h4>
+                <app-fruits></app-fruits>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import Fruits from './Fruits.vue';
+    import  { fruitsMixin } from './fruitsMixin';
+
     export default {
+        mixins: [fruitsMixin],
         data() {
             return {
-                text: 'Hello there!',
-                fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-                fruitFilterText: ''
+                text: 'Hello there!'
             };
         },
         filters: {
@@ -29,12 +35,8 @@
                 return value.toUpperCase();
             }
         },
-        computed: {
-            filteredFruits() {
-                return this.fruits.filter((item) => {
-                    return item.match(this.fruitFilterText);
-                });
-            }
+        components: {
+            appFruits: Fruits
         }
     }
 </script>

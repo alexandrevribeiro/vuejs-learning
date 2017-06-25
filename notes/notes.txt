@@ -438,3 +438,7 @@ In order to create your own custom control, you just need to create a Vue compon
             return value.toUpperCase();
         }
     }
+
+# Mixins
+- Mixins are a flexible way to distribute reusable functionalities for Vue components. 
+- When a component uses a mixin, all options in the mixin will be “mixed” into the component’s own options.
