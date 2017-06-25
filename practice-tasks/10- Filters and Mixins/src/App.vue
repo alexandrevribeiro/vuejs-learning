@@ -7,6 +7,7 @@
                 <!-- Build a local Filter which reverses the Text it is applied on -->
                 <h3>Exercise 1 - Reversed:</h3>
                 <p>{{ text | reverse }}</p>
+                <p>{{ 'Another text!' | reverse | append-count }}</p>
                 <hr>
 
                 <!-- Exercise 2 -->
@@ -40,10 +41,10 @@
 </template>
 
 <script>
-    import computedPropsMixin from './computedPropsMixin';
+    import textsWithCountMixin from './textsWithCountMixin';
 
     export default {
-        mixins: [computedPropsMixin],
+        mixins: [textsWithCountMixin],
         data() {
             return {
                 text: 'Vue.js Filters and Mixins!',
@@ -54,18 +55,18 @@
             reverse(value) {
                 return value.split('').reverse().join('');
             }
+        },       
+        computed: {
+            reversedText() {
+                return this.text.split('').reverse().join('');
+            }
+            // Moved to mixin:
+            // textsWithCount() {
+            //     return this.someTexts.map(function(item) {
+            //         return `${item} (${item.length})`;
+            //     });
+            // }
         }
-        // Moved to mixin:
-        // computed: {
-        //     reversedText() {
-        //         return this.text.split('').reverse().join('');
-        //     },
-        //     textsWithCount() {
-        //         return this.someTexts.map(function(item) {
-        //             return `${item} (${item.length})`;
-        //         });
-        //     }
-        // }
     }
 </script>
 
