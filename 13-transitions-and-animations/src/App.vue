@@ -4,9 +4,15 @@
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <h1>Animations</h1>
                 <hr>
+                <label>Animation for the first info:</label>
+                <select v-model="firstAlertAnimation" class="form-control">
+                    <option value="fade">Fade</option>
+                    <option value="slide">Slide</option>
+                </select>
+                <br>
                 <button class="btn btn-primary" @click="show = !show">Show </button>
                 <br><br>
-                <transition name="fade">
+                <transition :name="firstAlertAnimation">
                     <div class="alert alert-info" v-if="show">This is some Info</div>
                 </transition>
                 <!-- "transition" works with the two possible CSS properties:
@@ -16,6 +22,7 @@
                 <transition name="slide" type="animation">
                     <div class="alert alert-info" v-show="show">This is some Info</div>
                 </transition>
+                
                 <!-- "appear" attr makes the transition be also applied when loaded-->
                 <transition name="fade" appear>
                     <div class="alert alert-info" v-show="show">This is some Info</div>
@@ -40,7 +47,8 @@
         data() {
             return {
                 show: true,
-                anotherShow: false
+                anotherShow: false,
+                firstAlertAnimation: 'fade'
             }
         }
     }
