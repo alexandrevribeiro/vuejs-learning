@@ -45,3 +45,9 @@ Helpful Links:
 
 Useful Links: 
     Official Docs - Custom Directives: http://vuejs.org/guide/custom-directive.html
+
+# Section 13 - Filters and Mixins
+
+Useful Links:
+    Official Docs - Filters: http://vuejs.org/guide/syntax.html#Filters
+    Official Docs - Mixins: http://vuejs.org/guide/mixins.html
