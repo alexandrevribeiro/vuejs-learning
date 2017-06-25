@@ -9,7 +9,11 @@
                 <transition name="fade">
                     <div class="alert alert-info" v-show="show">This is some Info</div>
                 </transition>
-                <transition name="slide">
+                <!-- "transition" works with the two possible CSS properties:
+                "animation" and "transition". By default Vue.js the one that has the
+                longest duration, but it can be overwritten through "type" attr.
+                 -->
+                <transition name="slide" type="animation">
                     <div class="alert alert-info" v-show="show">This is some Info</div>
                 </transition>
             </div>
@@ -42,13 +46,22 @@
         opacity: 0;
     }
 
-    .slide-enter { /* It's not necessary because the @keyFrame */ }
+    .slide-enter { 
+        /*transform: translateY(20px);*/
+        opacity: 0;
+    }
     .slide-enter-active {
         animation: slide-in 1s ease-out forwards;
+        transition: opacity .5s;
     }
     .slide-leave { /* It's not necessary because the @keyFrame */ }
     .slide-leave-active {
         animation: slide-out 1s ease-out forwards;
+        /*transition: opacity 1s;*/
+        /* As below the transition is bigger than the animation, it's necessary
+           to tell "<transition>" (through "type") which one should be the last */
+        transition: opacity 3s;
+        opacity: 0;
     }
 
     @keyframes slide-in {
