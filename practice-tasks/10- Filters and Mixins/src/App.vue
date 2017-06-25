@@ -31,14 +31,19 @@
                 <hr>
 
                 <!-- Exercise 4 -->
-                <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
+                <!-- Share the Computed Property rebuilding Exercise 3 via a Mixin -->
+                <!-- Done! -->
+                <h3>Exercise 4 - Extract computed props to Mixin. ↑</h3>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import computedPropsMixin from './computedPropsMixin';
+
     export default {
+        mixins: [computedPropsMixin],
         data() {
             return {
                 text: 'Vue.js Filters and Mixins!',
@@ -49,17 +54,18 @@
             reverse(value) {
                 return value.split('').reverse().join('');
             }
-        },
-        computed: {
-            reversedText() {
-                return this.text.split('').reverse().join('');
-            },
-            textsWithCount() {
-                return this.someTexts.map(function(item) {
-                    return `${item} (${item.length})`;
-                });
-            }
         }
+        // Moved to mixin:
+        // computed: {
+        //     reversedText() {
+        //         return this.text.split('').reverse().join('');
+        //     },
+        //     textsWithCount() {
+        //         return this.someTexts.map(function(item) {
+        //             return `${item} (${item.length})`;
+        //         });
+        //     }
+        // }
     }
 </script>
 
