@@ -17,9 +17,18 @@
                     <li v-for="text in someTexts">{{ text | append-count }}</li>
                 </ul>
                 <hr>
-                
+
                 <!-- Exercise 3 -->
                 <!-- Do the same as in Exercises 1 & 2, now with Computed Properties -->
+                <h3>Exercise 3 - Reversed and Texts count using "Computed":</h3>
+                <h4>Reversed:</h4>
+                <p>{{ reversedText }}</p>
+
+                <h4>Texts count:</h4>
+                <ul>
+                    <li v-for="text in textsWithCount">{{ text }}</li>
+                </ul>
+                <hr>
 
                 <!-- Exercise 4 -->
                 <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
@@ -37,8 +46,18 @@
             };
         },
         filters: {
-            reverse(text) {
-                return text.split('').reverse().join('');
+            reverse(value) {
+                return value.split('').reverse().join('');
+            }
+        },
+        computed: {
+            reversedText() {
+                return this.text.split('').reverse().join('');
+            },
+            textsWithCount() {
+                return this.someTexts.map(function(item) {
+                    return `${item} (${item.length})`;
+                });
             }
         }
     }
