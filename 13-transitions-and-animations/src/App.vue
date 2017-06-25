@@ -46,12 +46,18 @@
                     <div class="alert alert-info" v-if="showMultiple" key="info">-> This is some Info</div>
                     <div class="alert alert-warning" v-else key="warning">-> This is some Warning</div>
                 </transition>
+
+                <hr>
+                <h4>JavaScript transitions</h4>
+                <js-transitions></js-transitions>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+    import JSTransitions from './JSTransitions.vue';
+
     export default {
         data() {
             return {
@@ -60,6 +66,9 @@
                 showMultiple: true,
                 firstAlertAnimation: 'fade'
             }
+        },
+        components: {
+            jsTransitions: JSTransitions
         }
     }
 </script>
