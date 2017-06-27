@@ -3,7 +3,10 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <h1>Vuex</h1>
+                <h4>Result:</h4>
                 <app-result></app-result>
+                <hr>
+                <h4>Another result</h4>
                 <app-another-result></app-another-result>
                 <hr>
                 <app-counter></app-counter>
