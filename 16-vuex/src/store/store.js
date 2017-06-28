@@ -18,25 +18,26 @@ export const store = new Vuex.Store({
     // Mutations MUST be synchronous, because otherwise it would be
     // impossible to track the state changes
     mutations: {
-        increment: state => {
-            state.count++;
+        increment: (state, payload) => {
+            state.count += payload;
         },
-        decrement: state => {
-            state.count--;
+        decrement: (state, payload) => {
+            state.count -= payload;
         }
     },
     // Actions, however, may run async code and then change the state 
     // by calling a mutation (through "commit" method)
     actions: {
-        asyncIncrement: context => {
+        anyAction: context => { console.log('anyAction'); },
+        asyncIncrement: (context, payload) => {
             setTimeout(() => {
-                context.commit('increment');
-            }, 1000);
+                context.commit('increment', payload.by);
+            }, payload.duration);
         },
-        asyncDecrement: ({commit}) => {
+        asyncDecrement: ({commit}, payload) => {
             setTimeout(() => {
-                commit('decrement');
-            }, 1000);
+                commit('decrement', payload.by);
+            }, payload.duration);
         }
     }
 });
