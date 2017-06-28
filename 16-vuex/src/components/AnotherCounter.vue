@@ -1,36 +1,27 @@
 <template>
     <div>
-        <button class="btn btn-primary" @click="increment">Increment</button>
-        <button class="btn btn-primary" @click="decrement">Decrement</button>
+        <button class="btn btn-primary" @click="asyncIncrement">Increment (async)</button>
+        <button class="btn btn-primary" @click="asyncDecrement">Decrement (async)</button>
     </div>
 </template>
 
 <script>
-    import { mapMutations } from 'vuex';
+    // For all details about "Mutations" see the "Counter.vue" file
 
-    export default {
-        // Option 1) Create one method for each mutation, calling the "commit".
-        /*
-        methods: {
-            increment() {
-                // this.$store.state.count++;
-                this.$store.commit('increment');
-            },
-            decrement() {
-                // this.$store.state.count--;
-                this.$store.commit('decrement');
-            }
-        }
-        */
+    // import { mapMutations } from 'vuex';
+    import { mapActions } from 'vuex';
 
-        // Option 2)  Use the "mapMutations" help function to automatically
-        // map all mutations to methods. It can be an array of
-        // strings (with the getter names), or an object where you can change the name].
-        // Optionally we can use EC6 Spread operators to allow creating more methods
+    export default {        
+        // methods: {
+        //     ...mapMutations([
+        //         'increment',
+        //         'decrement'
+        //     ])
+        // }
         methods: {
-            ...mapMutations([
-                'increment',
-                'decrement'
+            ...mapActions([
+                'asyncIncrement',
+                'asyncDecrement'
             ])
         }
     }
