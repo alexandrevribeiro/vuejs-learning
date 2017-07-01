@@ -52,6 +52,13 @@ Useful Links:
     Official Docs - Filters: http://vuejs.org/guide/syntax.html#Filters
     Official Docs - Mixins: http://vuejs.org/guide/mixins.html
 
+# Section 15 - Connecting to Servers via Http - Using vue-resource
+
+Useful Links:
+    vue-resource on Github: https://github.com/yyx990803/vue-resource
+    Some Code Recipes for vue-resource: https://github.com/yyx990803/vue-resource/blob/master/docs/recipes.md
+    Template URLs: https://medialize.github.io/URI.js/uri-template.html
+    Requests and Responses (incl. Different File Formats): https://github.com/yyx990803/vue-resource/blob/master/docs/http.md
 
 # Section 16 - Better State Management with Vuex
 
