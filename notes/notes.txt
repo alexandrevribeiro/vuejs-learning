@@ -93,6 +93,20 @@ All the places in the template you can access the Vue instance, you can write an
             }
         });
 
+- The main purpose of computed properties is to get data (since the idea behind it is that it depends on something else, and it gets recalculated every time its dependencies change), but RARELY you may need also to set data.
+For those RARE cases it's possible to define both a "getter" and a "setter" for it.
+- To be able to use "v-model" with a computed property it's necessary to define both "get" and "set" methods. Ex.:
+    computed: {
+        value: {
+            get() {
+                return this.$store.getters.value;
+            },
+            set(value) {
+                this.$store.dispatch('updateValue', value);
+            }
+        }
+    }
+    
 # Watch
 - With "watch" you can execute code when a specific property is changed.
 - You can declare the watched properties in the "watch" property of the Vue instance.
