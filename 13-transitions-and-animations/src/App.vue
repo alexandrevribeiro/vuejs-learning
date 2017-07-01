@@ -50,6 +50,16 @@
                 <hr>
                 <h4>JavaScript transitions</h4>
                 <js-transitions></js-transitions>
+                
+                <hr>
+                <h4>Dynamic components</h4>
+                <button class="btn btn-primary"
+                    @click="selectedComponent = selectedComponent == 'app-success-alert' ? 'app-danger-alert' : 'app-success-alert'">
+                    Toggle components
+                </button>
+                <transition name="fade" mode="out-in">
+                    <component :is="selectedComponent"></component>
+                </transition>                
             </div>
         </div>
     </div>
@@ -57,6 +67,8 @@
 
 <script>
     import JSTransitions from './JSTransitions.vue';
+    import DangerAlert from './components/DangerAlert.vue';
+    import SuccessAlert from './components/SuccessAlert.vue';
 
     export default {
         data() {
@@ -64,11 +76,14 @@
                 show: true,
                 anotherShow: false,
                 showMultiple: true,
-                firstAlertAnimation: 'fade'
+                firstAlertAnimation: 'fade',
+                selectedComponent: 'app-success-alert'
             }
         },
         components: {
-            jsTransitions: JSTransitions
+            jsTransitions: JSTransitions,
+            appDangerAlert: DangerAlert,
+            appSuccessAlert : SuccessAlert
         }
     }
 </script>
