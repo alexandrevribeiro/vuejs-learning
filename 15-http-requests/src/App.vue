@@ -31,20 +31,27 @@
                     username: '',
                     mail: ''
                 },
-                users: []
+                users: [],
+                resource: {}
             };
+        },
+        created() {
+            this.resource = this.$resource('data.json');
         },
         methods: {
             submit() {
-                this.$http.post('', this.user)
-                    .then(response => {
-                        console.log(response);
-                    }, error => {
-                        console.error(error);
-                    });
+                // this.$http.post('data.json', this.user)
+                //     .then(response => {
+                //         console.log(response);
+                //     }, error => {
+                //         console.error(error);
+                //     });
+
+                // See: https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
+                this.resource.save({}, this.user);
             },
             fetchData() {
-                this.$http.get('')
+                this.$http.get('data.json')
                     .then(response => {
                         return response.json();
                     }, error => {
