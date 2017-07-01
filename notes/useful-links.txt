@@ -51,3 +51,11 @@ Useful Links:
 Useful Links:
     Official Docs - Filters: http://vuejs.org/guide/syntax.html#Filters
     Official Docs - Mixins: http://vuejs.org/guide/mixins.html
+
+
+# Section 16 - Better State Management with Vuex
+
+Useful Links:
+    Vuex Github Page: https://github.com/vuejs/vuex
+    Vuex Documenation: https://vuex.vuejs.org/en/
+    Auto-namespacing with Vuex 2.1: https://github.com/vuejs/vuex/releases/tag/v2.1.0
