@@ -36,7 +36,12 @@
             };
         },
         created() {
-            this.resource = this.$resource('data.json');
+            const customActions = {
+                saveOnAlternative: { method: 'POST', url: 'alternative.json'}
+            };
+
+            // this.resource = this.$resource('data.json');
+            this.resource = this.$resource('data.json', {}, customActions);
         },
         methods: {
             submit() {
@@ -49,6 +54,9 @@
 
                 // See: https://github.com/pagekit/vue-resource/blob/develop/docs/resource.md
                 this.resource.save({}, this.user);
+
+                // Using custom actions:
+                this.resource.saveOnAlternative(this.user);
             },
             fetchData() {
                 this.$http.get('data.json')
