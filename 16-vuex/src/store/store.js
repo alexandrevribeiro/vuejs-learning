@@ -1,7 +1,34 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import counter from './modules/counter';
+import * as getters from './getters';
+import * as mutations from './mutations';
+import * as actions from './actions';
+
 Vue.use(Vuex);
+
+export const store = new Vuex.Store({
+    state: {
+        value: 0
+    },
+    getters,
+    mutations,    
+    actions,
+    modules: {
+        counter
+    },
+});
+
+// - "Mutations" MUST be synchronous, because otherwise it would be
+// impossible to track the state changes
+// - "Actions", however, may run async code and then change the state 
+// by calling a mutation (through "commit" method)
+
+
+/*
+
+-> BEFORE folder restructuring
 
 export const store = new Vuex.Store({
     state: {
@@ -51,3 +78,5 @@ export const store = new Vuex.Store({
         }
     }
 });
+
+*/
