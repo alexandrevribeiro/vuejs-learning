@@ -59,7 +59,24 @@
                 </button>
                 <transition name="fade" mode="out-in">
                     <component :is="selectedComponent"></component>
-                </transition>                
+                </transition> 
+                <hr>
+                <h4>Transition groups</h4>
+                <button class="btn btn-primary"
+                    @click="addItem">
+                    Add item
+                </button>
+                <br><br>
+                <ul class="list-group">
+                    <transition-group name="slide">
+                        <li 
+                            class="list-group-item" 
+                            v-for="(number, index) in numbers"
+                            @click="removeItem(index)"
+                            style="cursor: pointer;"
+                            :key="number">{{ number }}</li>
+                    s</transition-group>
+                </ul>
             </div>
         </div>
     </div>
@@ -77,13 +94,23 @@
                 anotherShow: false,
                 showMultiple: true,
                 firstAlertAnimation: 'fade',
-                selectedComponent: 'app-success-alert'
+                selectedComponent: 'app-success-alert',
+                numbers: [1, 2, 3, 4, 5]
             }
         },
         components: {
             jsTransitions: JSTransitions,
             appDangerAlert: DangerAlert,
             appSuccessAlert : SuccessAlert
+        },
+        methods: {
+            addItem() {
+                const pos = Math.floor(Math.random() * this.numbers.length);
+                this.numbers.splice(pos, 0, this.numbers.length + 1);
+            },
+            removeItem(index) {
+                this.numbers.splice(index, 1);
+            }
         }
     }
 </script>
@@ -119,6 +146,11 @@
            to tell "<transition>" (through "type") which one should be the last */
         /*transition: opacity 3s;*/
         opacity: 0;
+        position: absolute;
+    }
+
+    .slide-move {
+        transition: transform 1s;
     }
 
     @keyframes slide-in {
