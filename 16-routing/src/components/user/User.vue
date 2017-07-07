@@ -2,10 +2,10 @@
     <div>
         <h1>The User Page</h1>
         <hr>
-        <!-- Renders the nested (children) route -->
-        <router-view></router-view>
-        
         <button class="btn btn-primary" @click="navigateToHome">Go to Home</button>
+        <br>
+        <!-- Renders the nested (children) route -->
+        <router-view></router-view>    
     </div>
 </template>
 
@@ -32,7 +32,8 @@ export default {
     // },
     methods: {
         navigateToHome() {
-            this.$router.push('/');
+            // this.$router.push('/');
+            this.$router.push({ name: 'home' });
         }
     }
 }
