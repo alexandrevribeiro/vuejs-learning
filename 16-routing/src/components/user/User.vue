@@ -2,11 +2,10 @@
     <div>
         <h1>The User Page</h1>
         <hr>
-        <p>Loaded id: {{ id }}</p>
-        <button class="btn btn-primary" @click="navigateToHome">Go to Home</button>
-        
         <!-- Renders the nested (children) route -->
         <router-view></router-view>
+        
+        <button class="btn btn-primary" @click="navigateToHome">Go to Home</button>
     </div>
 </template>
 
@@ -28,9 +27,9 @@ export default {
     */
     // As of vue-router version 2.2, it's possible to bind the "route params" to "props",
     // avoiding have to watch a data property.
-    props: {
-        id: String
-    },
+    // props: {
+    //     id: String
+    // },
     methods: {
         navigateToHome() {
             this.$router.push('/');
