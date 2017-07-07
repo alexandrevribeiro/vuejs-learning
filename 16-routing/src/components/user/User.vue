@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    /*
     data() {
         return {
             id: this.$route.params.id
@@ -20,6 +21,12 @@ export default {
         '$route'(to, from) {
             this.id = to.params.id;
         }
+    },
+    */
+    // As of vue-router version 2.2, it's possible to bind the "route params" to "props",
+    // avoiding have to watch a data property.
+    props: {
+        id: String
     },
     methods: {
         navigateToHome() {
