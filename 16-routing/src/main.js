@@ -10,7 +10,18 @@ const router = new VueRouter({
   routes,
   // The "history" mode requires the server to always return the "index.html" page.
   // For more info see: https://router.vuejs.org/en/essentials/history-mode.html
-  mode: 'history'
+  mode: 'history',
+  
+  // Configures the scroll behavior
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition)
+      return savedPosition;
+
+    if (to.hash)
+      return { selector: to.hash };
+
+    return { x: 0, y: 0};
+  }
 });
 
 new Vue({
