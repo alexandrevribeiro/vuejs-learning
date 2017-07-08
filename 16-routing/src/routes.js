@@ -17,5 +17,9 @@ export const routes = [
         { path: '', component: UserStart },
         { path: ':id', component: UserDetail, props: true },
         { path: ':id/edit', component: UserEdit, name: 'userEdit', props: true },
-    ]}
+    ]},
+
+    { path: '/redirect-me', redirect: '/users' /* { name: 'userEdit' } */},
+
+    { path: '*', redirect: '/' } // Redirects all non-matched routes to '/'
 ];
