@@ -4,11 +4,7 @@
         <p>User id: {{ id }}</p>
         <router-link
             tag="a"
-<<<<<<< HEAD
             :to="editUserLink"
-=======
-            :to="{ name: 'userEdit', params: { id: id} }"
->>>>>>> master
             class="btn btn-primary">Edit user</router-link>
     </div>
 </template>
@@ -20,11 +16,19 @@ export default {
         return {
             editUserLink: { 
                 name: 'userEdit', 
-                params: { id: this.id}, 
+                params: { id: this.id},
                 query: { locale: 'en', q: 100 } ,
                 hash: "#data"
             }
         }
+    },
+    beforeRouteEnter(to, from, next) {
+        var authenticated = true;
+        if (authenticated)
+            next();
+        else
+            next(false);
+
     }
 }
 </script>

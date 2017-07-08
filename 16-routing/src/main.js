@@ -24,6 +24,16 @@ const router = new VueRouter({
   }
 });
 
+// Configure a listener to be called before every route that's called
+router.beforeEach((to, from, next) => {
+  console.info(`Global router.beforeEach. URL: ${to.path}`);
+  next();
+  // Other possibilities:
+  // next(false); // Aborts the current operation
+  // next('/path'); // A path
+  // next({ name: 'anything' }); // A route object
+});
+
 new Vue({
   el: '#app',
   router,
