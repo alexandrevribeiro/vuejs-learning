@@ -5,7 +5,7 @@
         <router-link
             tag="a"
             :to="editUserLink"
-            class="btn btn-primary">Edit user</router-link>
+            class="btn btn-primary">Edit user</router-link>    
     </div>
 </template>
 
@@ -29,6 +29,12 @@ export default {
         else
             next(false);
 
+    },
+    beforeRouteLeave(to, from, next) {
+        if (confirm('Are you sure you want to leave this page?'))
+            next();
+        else
+            next(false);
     }
 }
 </script>
