@@ -60,7 +60,14 @@ Useful Links:
     Template URLs: https://medialize.github.io/URI.js/uri-template.html
     Requests and Responses (incl. Different File Formats): https://github.com/yyx990803/vue-resource/blob/master/docs/http.md
 
-# Section 16 - Better State Management with Vuex
+
+# Section 16 - Routing in a VueJS Application
+
+Useful Links:
+    vue-router Github Page: https://github.com/vuejs/vue-router
+    vue-router Documentation:https://router.vuejs.org/en/
+
+# Section 17 - Better State Management with Vuex
 
 Useful Links:
     Vuex Github Page: https://github.com/vuejs/vuex
