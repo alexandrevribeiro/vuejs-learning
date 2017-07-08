@@ -4,7 +4,11 @@
         <p>User id: {{ id }}</p>
         <router-link
             tag="a"
+<<<<<<< HEAD
             :to="editUserLink"
+=======
+            :to="{ name: 'userEdit', params: { id: id} }"
+>>>>>>> master
             class="btn btn-primary">Edit user</router-link>
     </div>
 </template>
